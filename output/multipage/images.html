@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class=split lang=en-US-x-hixie><script src=/link-fixup.js defer=""></script><meta charset=utf-8><meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name=viewport><title>HTML Standard</title><meta content=#3c790a name=theme-color><link rel=stylesheet href=https://resources.whatwg.org/spec.css crossorigin=""><link rel=stylesheet href=https://resources.whatwg.org/standard.css crossorigin=""><link rel=stylesheet href=https://raw.githack.com/whatwg/whatwg.org/sideshowbarker/bikeshed-mdn-anno-styles/resources.whatwg.org/standard-shared-with-dev.css crossorigin=""><link rel=icon href=https://resources.whatwg.org/logo.svg crossorigin=""><script>
+<!DOCTYPE html><html class=split lang=en-US-x-hixie><script src=/link-fixup.js defer=""></script><meta charset=utf-8><meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name=viewport><title>HTML Standard</title><meta content=#3c790a name=theme-color><link rel=stylesheet href=https://resources.whatwg.org/spec.css crossorigin=""><link rel=stylesheet href=https://resources.whatwg.org/standard.css crossorigin=""><link rel=stylesheet href=https://resources.whatwg.org/standard-shared-with-dev.css crossorigin=""><link rel=icon href=https://resources.whatwg.org/logo.svg crossorigin=""><script>
    function toggleStatus(div) {
      div.parentNode.classList.toggle('wrapped');
    }
@@ -119,7 +119,7 @@
   
   <header id=head class="head with-buttons">
    <a href=https://whatwg.org/ class=logo><img width=100 alt=WHATWG crossorigin="" src=https://resources.whatwg.org/logo.svg height=100></a>
-   <hgroup><h1 class=allcaps>HTML</h1><h2 id=living-standard class="no-num no-toc">Living Standard — Last Updated <span class=pubdate>9 April 2020</span></h2></hgroup>
+   <hgroup><h1 class=allcaps>HTML</h1><h2 id=living-standard class="no-num no-toc">Living Standard — Last Updated <span class=pubdate>16 April 2020</span></h2></hgroup>
    
    
 
@@ -837,17 +837,15 @@ was an English <c- p>&lt;</c-><c- f>a</c-> <c- e>href</c-><c- o>=</c-><c- s>&quo
 
   <h6 id=when-to-obtain-images><span class=secno>4.8.4.3.1</span> When to obtain images<a href=#when-to-obtain-images class=self-link></a></h6>
 
-  <p>In a <a id=when-to-obtain-images:browsing-context href=browsers.html#browsing-context>browsing context</a> where <a href=webappapis.html#concept-bc-noscript id=when-to-obtain-images:concept-bc-noscript>scripting is
-  disabled</a>, user agents may obtain images immediately or on demand. In a <a id=when-to-obtain-images:browsing-context-2 href=browsers.html#browsing-context>browsing
-  context</a> where <a href=webappapis.html#concept-bc-noscript id=when-to-obtain-images:concept-bc-noscript-2>scripting is enabled</a>, user agents
-  must obtain images immediately.</p>
+  <p>By default, images are obtained immediately. User agents may provide users with the option to
+  instead obtain them on-demand. (The on-demand option might be used by bandwidth-constrained users,
+  for example.)</p>
 
-  <p>A user agent that obtains images immediately must synchronously
-  <a href=#update-the-image-data id=when-to-obtain-images:update-the-image-data>update the image data</a> of an <code id=when-to-obtain-images:the-img-element><a href=embedded-content.html#the-img-element>img</a></code> element,
-  with the <i>restart animation</i> flag set if so stated,
-  whenever that element is created or has experienced <a href=#relevant-mutations id=when-to-obtain-images:relevant-mutations>relevant mutations</a>.</p>
+  <p>When obtaining images immediately, the user agent must synchronously <a href=#update-the-image-data id=when-to-obtain-images:update-the-image-data>update the image
+  data</a> of the <code id=when-to-obtain-images:the-img-element><a href=embedded-content.html#the-img-element>img</a></code> element, with the <i>restart animation</i> flag set if so
+  stated, whenever that element is created or has experienced <a href=#relevant-mutations id=when-to-obtain-images:relevant-mutations>relevant mutations</a>.</p>
 
-  <p>A user agent that obtains images on demand must <a href=#update-the-image-data id=when-to-obtain-images:update-the-image-data-2>update the image data</a> of an
+  <p>When obtaining images on demand, the user agent must <a href=#update-the-image-data id=when-to-obtain-images:update-the-image-data-2>update the image data</a> of an
   <code id=when-to-obtain-images:the-img-element-2><a href=embedded-content.html#the-img-element>img</a></code> element whenever it needs the image data (i.e., on demand), but only if the
   <code id=when-to-obtain-images:the-img-element-3><a href=embedded-content.html#the-img-element>img</a></code> element's <a href=#current-request id=when-to-obtain-images:current-request>current request</a>'s <a href=#img-req-state id=when-to-obtain-images:img-req-state>state</a> is <a href=#img-none id=when-to-obtain-images:img-none>unavailable</a>. When an
   <code id=when-to-obtain-images:the-img-element-4><a href=embedded-content.html#the-img-element>img</a></code> element has experienced <a href=#relevant-mutations id=when-to-obtain-images:relevant-mutations-2>relevant mutations</a>, if the user agent only
